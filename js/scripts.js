@@ -18,7 +18,7 @@ let appendMultiple = (parent, ...children) => {
 }
 
 /* 
-Search bar
+Search bar. 
 */ 
 let $searchContainer = $('.search-container')
 let $search= $('<form>').attr('action', "#").attr('method', "get")
@@ -96,7 +96,10 @@ Open modal window on user card click
             }
         }) 
         // Close modal window on X click
-        $('#modal-close-btn').click(() => $('.modal-container').css('display', "none"))
+        $('#modal-close-btn').click(() => {
+            $('.modal-container').css('display', "none")
+            $('.modal-info-container').css('display', "none")
+        }) 
     })  
 }
 
