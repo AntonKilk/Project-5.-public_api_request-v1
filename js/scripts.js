@@ -103,6 +103,33 @@ Open modal window on user card click
     })  
 }
 
+/*
+ * Filters through employees on page
+ */
+function employeeFilter () {
+    let $userInput = $searchInput.val()
+    let $match = $('.card:contains(' + $userInput + ')')
+    $('.card').css('display', "none");
+    $match.css('display', "flex");
+}
+
+/*
+ * Adds event listener to search input
+ */
+function activateSearch (el, event) {
+    el.on(event, function () {
+        employeeFilter()
+    })
+}   
+
+/*
+ * Adds search functionality to search inputs
+ */
+function search () {
+    activateSearch($searchInput, 'input');
+    activateSearch($submit, 'click');
+}
+
 /* 
 Gets data from fetch request and inserts to user cards
 */
@@ -127,11 +154,4 @@ fetch(random12UsersURL)
     .then(generateUserCard)
     .then(generateModalCard)
     .then(openModalOnClick)
-
-    
-
-    
-    
-
-
-
+    .then(search)
