@@ -125,7 +125,7 @@ function activateSearch (el, event) {
 /*
  * Adds search functionality to search inputs
  */
-function search () {
+function searchFunction () {
     activateSearch($searchInput, 'input');
     activateSearch($submit, 'click');
 }
@@ -154,4 +154,4 @@ fetch(random12UsersURL)
     .then(generateUserCard)
     .then(generateModalCard)
     .then(openModalOnClick)
-    .then(search)
+    .then(searchFunction)
