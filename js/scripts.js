@@ -18,7 +18,7 @@ let appendMultiple = (parent, ...children) => {
 }
 
 /* 
-Search bar. NB! Add functionality!
+Search bar
 */ 
 let $searchContainer = $('.search-container')
 let $search= $('<form>').attr('action', "#").attr('method', "get")
